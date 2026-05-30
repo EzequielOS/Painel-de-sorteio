@@ -1,0 +1,45 @@
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent-pink: #ec4899;
+  --accent-blue: #06b6d4;
+  --accent: var(--accent-pink);
+  --muted: #94a3b8;
+  --text: #e6eef6;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071229 0%,var(--bg) 100%);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center}
+.panel{width:920px;max-width:95%;background:linear-gradient(180deg,rgba(255,255,255,0.03),transparent);border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+h1{margin:0 0 14px 0;font-size:24px}
+.input-area label{display:block;color:var(--muted);margin-bottom:8px}
+textarea{width:100%;height:110px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;padding:12px;resize:vertical}
+.row{display:flex;gap:12px;margin-top:10px;align-items:center}
+input[type=file]{color:var(--muted)}
+button{background:transparent;color:var(--accent-pink);border:1px solid rgba(236,72,153,0.14);padding:8px 12px;border-radius:8px;cursor:pointer}
+.primary{background:linear-gradient(90deg,var(--accent-pink),var(--accent-blue));color:#fff;border:none}
+.list-area{margin-top:18px}
+ul#list{list-style:none;padding:0;margin:8px 0;max-height:220px;overflow:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+ul#list li{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+ul#list li.highlight{background:linear-gradient(90deg, rgba(236,72,153,0.12), rgba(6,182,212,0.06));color:#041b17;font-weight:600}
+.controls{display:flex;gap:12px;justify-content:flex-end;margin-top:14px}
+.winner{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6)}
+.winner .content{background:var(--card);padding:18px;border-radius:14px;text-align:center;min-width:320px;box-shadow:0 12px 40px rgba(2,6,23,0.5);transform:scale(.95);opacity:0;transition:transform .25s ease,opacity .25s ease}
+.winner.visible .content{transform:scale(1);opacity:1}
+.winner.hidden{display:none}
+.winner-card{position:relative;padding:28px 22px}
+.winner-card .ribbon{position:absolute;left:50%;transform:translateX(-50%);top:-12px;background:linear-gradient(90deg,var(--accent-pink),var(--accent-blue));color:white;padding:6px 16px;border-radius:20px;font-weight:700}
+.bigName{font-size:30px;font-weight:800;margin-top:8px;color:var(--text)}
+.bigPhone{color:var(--muted);margin-top:6px}
+.winner-actions{display:flex;gap:8px;justify-content:center;margin-top:12px}
+
+/* ticker (telinha) durante o sorteio */
+.ticker{position:fixed;left:50%;transform:translateX(-50%);bottom:10%;background:var(--card);padding:12px;border-radius:10px;color:var(--text);min-width:260px;box-shadow:0 8px 28px rgba(2,6,23,0.45)}
+.ticker.hidden{display:none}
+.ticker .content{display:flex;flex-direction:column;gap:6px}
+.ticker .ticker-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ticker .ticker-name{font-size:22px;font-weight:800;color:var(--accent-pink);text-shadow:0 0 18px rgba(236,72,153,0.28);transition:opacity .12s ease,transform .12s ease}
+.ticker.flash .ticker-name{opacity:.75;transform:translateY(-1px)}
+
+.confetti{position:fixed;pointer-events:none;left:0;right:0;top:0;bottom:0}
+.confetti span{position:absolute;font-size:20px;animation:fall 2.2s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}

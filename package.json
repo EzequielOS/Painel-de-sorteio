@@ -1,0 +1,12 @@
+{
+  "name": "painel-sorteio",
+  "version": "1.0.0",
+  "description": "Painel simples de sorteio que recebe JSON com nome e telefone",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

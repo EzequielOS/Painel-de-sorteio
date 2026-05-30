@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel de Sorteio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="panel">
+    <h1>Painel de Sorteio</h1>
+
+    <section class="input-area">
+      <label>Cole o JSON (array de objetos com <code>nome</code> e <code>telefone</code>)</label>
+      <textarea id="jsonInput" placeholder='[{"nome":"João","telefone":"(11) 99999-9999"}]'></textarea>
+      <div class="row">
+        <input type="file" id="fileInput" accept="application/json">
+        <button id="loadBtn">Carregar</button>
+      </div>
+    </section>
+
+    <section class="list-area">
+      <h2>Participantes</h2>
+      <ul id="list"></ul>
+    </section>
+
+    <div class="controls">
+      <button id="drawBtn" class="primary">Sortear</button>
+      <button id="clearBtn">Limpar</button>
+    </div>
+
+    <div id="winner" class="winner hidden">
+      <div class="content winner-card">
+        <div class="ribbon">Vencedor</div>
+        <div class="bigName" id="winnerName"></div>
+        <div class="bigPhone" id="winnerPhone"></div>
+        <div class="winner-actions">
+          <button id="closeWinner">Fechar</button>
+          <button id="copyWinner">Copiar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- telinha durante o sorteio -->
+    <div id="ticker" class="ticker hidden">
+      <div class="content">
+        <div class="ticker-label">Sorteando:</div>
+        <div id="tickerName" class="ticker-name"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
